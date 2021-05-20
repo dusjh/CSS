@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> CSS 메뉴 만들기(실습) </title>
+    <style>
+        /*스타일 작성해서 메뉴 만들기*/
+      nav ul {
+        list-style-type: none;  /*앞에 불릿기호 없애기*/
+        border: solid black;
+        margin: 0; padding: 0; /*상하좌우 여백*/
+        overflow: hidden; /*밑의 메뉴들이 floating 되어서 사이에 여백이 생김*/
+        background-color: rgb(247, 206, 206);
+      }
+      nav li {
+        float: left; /*글자들 옆으로 정렬*/
+        border-right: 2px solid white;
+      }
+      nav a {         
+          display: block; /*상하 여백*/
+          color: white;
+          text-align: center;
+          padding: 20px 20px; 
+          text-decoration: none;  /*밑줄 없앰*/
+          font-size: 30px;
+      }
+      nav a:hover {  /*마우스 갖다 댔을때 색깔 변하기*/
+          background-color: rgb(253, 160, 98);        
+      }
+      nav .active, nav a.active:hover { /*home에 갖다댔을때 색변함(tomato색)*/
+        background-color: tomato;
+      }
+      nav li:last-child {
+          float: right;
+          border-left: 2px solid white;
+          border-right: none;
+      }
+    </style>
+</head>
+<body>
+   <nav>
+       <ul>
+           <li><a class="active" href="#home">Home</a></li>
+           <li><a href="#news">News</a></li>
+           <li><a href="#contact">Contact</a></li>
+           <li><a href="#about">About</a></li>
+       </ul>
+   </nav>
+   <div>
+       <ul>
+           <li>사과</li>
+           <li>배</li>
+           <li>복숭아</li>
+       </ul>
+   </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+h1 {background-color: aqua;}
+        h2 {background-color: orange;}
+        h2 {background-color: yellow;} /* 마지막 속성이 최종적으로 적용됨->동일 가중치일때는 작성순서 상관o */
+
+        /* 선택자 . : class를 의미->가중치가 높을 때는 작성 순서 상관x */
+        .red {background-color: red;}
+        .green {background-color: green;}
+        .yellow {background-color: yellow;}
+
+        /* 선택자 # : id를 의미 */
+        #yellow {background-color: teal;}
+
+        /* 선택자 우선 순위: id > class > 태그(tag) -> 선택자가 구체적이면 가중치 높아짐 */
+        p {background-color: gray;}
+
+         /* 위의 p태그보다 div > p 태그가 가중치 더 높음*/
+         /* >: 자녀 */
+        div > p {background-color: orange;} 
+        
+        /* .green {background-color: green;}와 상충되는데, 태그+클래스 함께 사용하므로 가중치가 더 높음.
+       (green 클래스 중에서 p태그에 있는 green 클래스로 지정하면 일반 green 클래스보다 가중치가 높아서 우선 적용됨)*/
+        p.green {background-color: greenyellow;}
